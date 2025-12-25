@@ -1,0 +1,111 @@
+html,
+body,
+*,
+:root {
+  margin: 0;
+  padding: 0;
+  /* scroll-snap-type: y mandatory; */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* OPSIONA; SCROLL */
+
+/* .hero,
+.product {
+  scroll-snap-align: start;
+} */
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: white;
+}
+
+.hero {
+  background-image: url(assets/images/main-image.jpg);
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-text {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  margin: 500px 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.product {
+  border-radius: 5px;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: start;
+  padding: 26px;
+
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+}
+
+.card-text {
+  padding: 2rem;
+  color: white;
+  max-width: 500px;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.card-text:hover {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.card-stats {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.card-stats .stats {
+  margin-top: 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #0f110f;
+  border: 1px solid #0f100f;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: #bebeca;
+  font-size: 15px;
+  padding-bottom: 2px;
+}
+
+.value {
+  font-weight: 600;
+}

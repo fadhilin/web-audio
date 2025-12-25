@@ -1,0 +1,76 @@
+body {
+  background-color: #05070c;
+}
+
+.detail {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+  display: grid;
+  gap: 14px;
+}
+
+.detail-card {
+  color: white;
+  background: #0d0f16;
+  border: 1px solid #1a1c24;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px -40px rgba(0, 0, 0, 0.5);
+}
+
+.detail-hero {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.detail-hero::after {
+  content: "";
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+
+.detail-body {
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.detail-body p {
+  color: rgb(247, 248, 255);
+  line-height: 1.6;
+}
+
+.back {
+  color: aqua;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.detail-stats {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.detail-stats .stats {
+  border-radius: 8px;
+  background-color: #0d0f16;
+  border: 1px solid rgb(28, 31, 41);
+  display: flex;
+  flex-direction: column;
+  padding: 13px;
+}
+.label {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  padding-bottom: 2px;
+}
+
+.value {
+  font-weight: 500;
+}
