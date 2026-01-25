@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,9 +12,194 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <section class="hero">
+    <section id="hero">
+      <div class="navbar">
+        <!-- Search & Filter Container -->
+        <div class="search-filter-container">
+          <!-- Search Bar -->
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Cari produk..."
+              autocomplete="off"
+            />
+            <button onclick="searchProducts()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+          <!-- Filter Dropdown -->
+          <div class="filter-container">
+            <button class="filter-btn" onclick="toggleFilter(event)">
+              <i class="fa fa-filter"></i> Filter
+            </button>
+            <div class="filter-dropdown" id="filterDropdown">
+              <div class="filter-section">
+                <h4>Kategori</h4>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="earbuds"
+                    onchange="applyFilters()"
+                  />
+                  Earbuds
+                </label>
+                <label>
+                  <input
+                    type="checkbox"
+                    value="headphone"
+                    onchange="applyFilters()"
+                  />
+                  Headphone
+                </label>
+              </div>
+
+              <div class="filter-section">
+                <h4>Harga</h4>
+                <label>
+                  <input
+                    type="radio"
+                    name="price"
+                    value="all"
+                    checked
+                    onchange="applyFilters()"
+                  />
+                  Semua
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="price"
+                    value="low"
+                    onchange="applyFilters()"
+                  />
+                  &lt; $250
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="price"
+                    value="mid"
+                    onchange="applyFilters()"
+                  />
+                  $250 - $300
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="price"
+                    value="high"
+                    onchange="applyFilters()"
+                  />
+                  &gt; $300
+                </label>
+              </div>
+
+              <div class="filter-section">
+                <h4>Sort By</h4>
+                <select id="sortBy" onchange="applyFilters()">
+                  <option value="default">Default</option>
+                  <option value="price-low">Harga: Rendah ke Tinggi</option>
+                  <option value="price-high">Harga: Tinggi ke Rendah</option>
+                  <option value="name">Nama: A-Z</option>
+                </select>
+              </div>
+
+              <button class="reset-filter-btn" onclick="resetFilters()">
+                <i class="fa fa-refresh"></i> Reset Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wishlist Button -->
+        <div class="wishlist-container">
+          <button class="wishlist-btn" onclick="toggleWishlist(event)">
+            <i class="fa fa-heart"></i>
+            <span class="wishlist-count">0</span>
+          </button>
+
+          <!-- Wishlist Dropdown -->
+          <div class="wishlist-dropdown" id="wishlistDropdown">
+            <div class="wishlist-header">
+              <h3>Wishlist</h3>
+              <button
+                class="clear-all-btn"
+                onclick="clearAllWishlist(event)"
+                id="clearWishlistBtn"
+                style="display: none"
+              >
+                <i class="fa fa-trash"></i> Hapus Semua
+              </button>
+            </div>
+
+            <div class="wishlist-items" id="wishlistItems">
+              <div class="wishlist-empty">
+                <p>Wishlist kosong</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Button -->
+        <div class="cart-container">
+          <button class="cart-btn" onclick="toggleCart(event)">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </button>
+
+          <!-- Cart Dropdown -->
+          <div class="cart-dropdown" id="cartDropdown">
+            <div class="cart-header">
+              <h3>Keranjang Belanja</h3>
+              <button
+                class="clear-all-btn"
+                onclick="clearAllCart(event)"
+                id="clearCartBtn"
+                style="display: none"
+              >
+                <i class="fa fa-trash"></i> Hapus Semua
+              </button>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+              <div class="cart-empty">
+                <p>Keranjang kosong</p>
+              </div>
+            </div>
+
+            <div class="cart-footer">
+              <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="totalPrice">$0</span>
+              </div>
+              <button class="checkout-btn" onclick="checkout(event)">
+                Checkout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-top"><a href="#hero">↑</a></div>
+
+      <!-- Instagram Chat Button -->
+      <a
+        href="https://instagram.com/fadilin24"
+        target="_blank"
+        class="instagram-chat-btn"
+        title="Chat via Instagram"
+      >
+        <i class="fa fa-instagram"></i>
+      </a>
+
       <div class="hero-text">
         <h1>AUDIO SHOP</h1>
         <p>Scroll untuk lihat lebih banyak</p>
