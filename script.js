@@ -586,7 +586,7 @@ function removeFromWishlist(event, id) {
   updateWishlist();
   saveWishlistToStorage();
 
-  // Refresh layar ketika diklik wishlist/love
+  // Refresh layar ketika diklik logo love wishlist
   const currentDisplayedProducts = getCurrentDisplayedProducts();
   displayProducts(currentDisplayedProducts);
 
