@@ -756,9 +756,6 @@ body {
   font-size: 30px;
   bottom: 30px;
   right: 30px;
-}
-
-.arrow-top a {
   text-decoration: none;
   color: white;
   cursor: pointer;
@@ -767,7 +764,7 @@ body {
   transition: all 0.3s;
 }
 
-.arrow-top a:hover {
+.arrow-top:hover {
   transform: translateY(-3px);
 }
 
