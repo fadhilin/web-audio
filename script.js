@@ -323,7 +323,7 @@ function addToCart(productData, buttonElement) {
     buttonElement.innerHTML = '<i class="fa fa-check"></i> Ditambahkan';
     buttonElement.style.background = "#2ecc71";
 
-    setTimeout(() => {
+    setTimeout(() => { 
       buttonElement.innerHTML = originalHTML;
       buttonElement.style.background = "#4CAF50";
     }, 1500);
@@ -365,7 +365,7 @@ function updateCart() {
 
   if (cart.length === 0) {
     cartItems.innerHTML =
-      '<div class="cart-empty"><p>Keranjang kosong</p></div>';
+      '<div class="cart-empty"><p>Keranjang kosong</p></div>';  
   } else {
     cartItems.innerHTML = cart
       .map(
@@ -685,7 +685,6 @@ function loadWishlistFromStorage() {
   if (savedWishlist) {
     wishlist = JSON.parse(savedWishlist);
     updateWishlist();
-    console.log("Wishlist loaded:", wishlist); // Debug log
   }
 }
 
